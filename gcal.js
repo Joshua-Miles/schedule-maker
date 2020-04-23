@@ -11,6 +11,8 @@ var SCOPES = "https://www.googleapis.com/auth/calendar";
 
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
+var form =  document.getElementById('form');
+
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -50,10 +52,12 @@ function initClient() {
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
         authorizeButton.style.display = 'none';
+        form.style.display = 'block'
         signoutButton.style.display = 'block';
         getCalendarList()
     } else {
         authorizeButton.style.display = 'block';
+        form.style.display = 'none'
         signoutButton.style.display = 'none';
     }
 }
