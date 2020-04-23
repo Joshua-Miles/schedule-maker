@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset="utf-8" />
+    <style>
+        .progress-bar {
+            transition: width 5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Calendar Copyier</p>
+    <div>
+        <button id="authorize_button" style="display: none; float:right;">Authorize</button>
+        <button id="signout_button" style="display: none; float:right;">Sign Out</button>
+    </div>
+    <div>
+        <label>Calendar</label>
+        <select class="calendar-input">
+            <option>
+                Select...
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Start Date</label>
+        <input class="start-input" type="date" />
+    </div>
+    <div>
+        <label>Instructor Email</label>
+        <input class="instructor-email-input" type="text" />
+    </div>
+    <div>
+        <label>Lecture Hall</label>
+        <select class="lecture-hall-input">
+            <option>
+                Select...
+            </option>
+            <option value="flatironschool.com_3530393435383936363535@resource.calendar.google.com">
+                Borg
+            </option>
+            <option value="flatironschool.com_3136383236363638383131@resource.calendar.google.com">
+                Turing
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Calendar (ICS File)</label>
+        <input class="file-input" type="file" />
+    </div>
+    <button class="submit-button">Submit</button>
+    <div style="display: none" class="progress-container">
+        <h3>Copying...</h3>
+        <div style="width: 0%; height: 10px; background-color: green" class="progress-bar"></div>
+        <p class="progress-message"></p>
+    </div>
+    <script src="luxon.js"></script>
+    <script src="./index.js"></script>
+    <script src="./gcal.js"></script>
+    <script src="./icsToJson.js"></script>
+    <script src="./parseFile.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+</body>
+
+</html>
