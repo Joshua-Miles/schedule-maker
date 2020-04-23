@@ -32,6 +32,7 @@ calendarInput.addEventListener('change', e => {
 fileInput.addEventListener('change', async e => {
     const icsString = await parseFile(e)
     icsEvents = icsToJson(icsString)
+    icsEvents.sort( (a, b) => DateTime.fromISO(a.startDate).ts - DateTime.fromISO(b.startDate).ts )
 })
 
 submitButton.addEventListener('click', async () => {
