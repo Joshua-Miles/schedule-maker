@@ -21,13 +21,13 @@ calendarInput.addEventListener('change', e => {
     calendarId = e.target.value
 })
 
-lectureHallInput.addEventListener('change', e => {
-    lectureHall = e.target.value
-})
+// lectureHallInput.addEventListener('change', e => {
+//     lectureHall = e.target.value
+// })
 
-instructorEmailInput.addEventListener('change', e => {
-    instructorEmail = e.target.value
-})
+// instructorEmailInput.addEventListener('change', e => {
+//     instructorEmail = e.target.value
+// })
 
 fileInput.addEventListener('change', async e => {
     const icsString = await parseFile(e)
