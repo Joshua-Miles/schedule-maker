@@ -11,7 +11,7 @@ const submitButton = document.querySelector('.submit-button')
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time))
 
-let startDate, calendarId, icsEvents, lectureHall, instructorEmail;
+let startDate, calendarId, icsEvents, lectureHall, instructorEmail, formerStartDate, offsetDuration;
 
 startInput.addEventListener('change', e => {
     startDate = DateTime.fromString(e.target.value, 'yyyy-MM-dd')
