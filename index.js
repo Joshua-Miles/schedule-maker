@@ -74,8 +74,8 @@ submitButton.addEventListener('click', async () => {
 
 
 const createTranslator = (firstEvent) => {
-    let formerStartDate = DateTime.fromISO(firstEvent.startDate)
-    let offsetDuration = Duration.fromObject({ weeks: Math.round(startDate.diff(formerStartDate).shiftTo('weeks').weeks) })
+    formerStartDate = DateTime.fromISO(firstEvent.startDate)
+    offsetDuration = Duration.fromObject({ weeks: Math.round(startDate.diff(formerStartDate).shiftTo('weeks').weeks) })
     return formerTimeString => {
         let formerTime = DateTime.fromISO(formerTimeString)
         return formerTime.plus(offsetDuration).toJSDate()
